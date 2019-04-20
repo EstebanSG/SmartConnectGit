@@ -25,7 +25,8 @@ SECRET_KEY = '8^k@m&4z*2-pi(b^puc2q69*k6-kbs6944yudb4$szqmf*ii_h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'SmartConnect.pythonanywhere.com']
+
 
 
 # Application definition
@@ -75,12 +76,21 @@ WSGI_APPLICATION = 'smartconnect.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    '''default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'smartconnectdb',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': '',
+        'PORT': '',
+    }'''
+
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'SmartConnect$smartconnect',
+        'USER': 'SmartConnect',
+        'PASSWORD': 'XXdU839Xu9VUHZ6g',
+        'HOST': 'SmartConnect.mysql.pythonanywhere-services.com',
         'PORT': '',
     }
 }
@@ -123,3 +133,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT= '/home/SmartConnect/smartconnect/static'
+STATICFILES_DIRS = ( os.path.join('static'), )
